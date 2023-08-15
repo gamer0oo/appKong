@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>menu</ion-title>
+    <ion-button (click)="logout()" slot="end">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card (click)="menuUno()">
+      <h2>Menu 1</h2>
+    </ion-card>
+    <ion-card>
+      <h2>Menu 2</h2>
+    </ion-card>
+</ion-content>

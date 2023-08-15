@@ -32,7 +32,7 @@ export class LoginPage implements OnInit {
 
     if (this.usuario == "admin" && this.contrasena == "123") {
       //alert("Login correcto");
-      this.router.navigateByUrl("home");
+      this.router.navigateByUrl("menu");
     }else{
       alert("Usuario o contraseña incorrecta.")
     }
