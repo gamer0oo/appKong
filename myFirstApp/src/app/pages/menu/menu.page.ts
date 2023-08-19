@@ -16,9 +16,14 @@ export class MenuPage implements OnInit {
 
 
   menuUno(){
-    this.router.navigateByUrl("menu-uno");
+    var parametroIdEmpleado = "123456789";
+    this.router.navigateByUrl(parametroIdEmpleado + "/menu-uno");
   }
 
+  menuTres(){
+    var parametroIdAsignatura = "PGY4121";
+    this.router.navigateByUrl(parametroIdAsignatura + "/menu-tres");
+  }
 
   logout(){
     this.router.navigateByUrl("login");

@@ -20,9 +20,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
-    path: 'menu-uno',
+    path: ':idempleado/menu-uno',
     loadChildren: () => import('./pages/menu-uno/menu-uno.module').then( m => m.MenuUnoPageModule)
   },
+  {
+    path: 'menu-dos',
+    loadChildren: () => import('./pages/menu-dos/menu-dos.module').then( m => m.MenuDosPageModule)
+  },
+  {
+    path: ':asignaturaId/menu-tres',
+    loadChildren: () => import('./pages/menu-tres/menu-tres.module').then( m => m.MenuTresPageModule)
+  },
+
 
 ];
 
