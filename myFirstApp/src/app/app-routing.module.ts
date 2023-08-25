@@ -31,6 +31,11 @@ const routes: Routes = [
     path: ':asignaturaId/menu-tres',
     loadChildren: () => import('./pages/menu-tres/menu-tres.module').then( m => m.MenuTresPageModule)
   },
+  {
+    path: 'menu-cuatro/:calificacion',
+    loadChildren: () => import('./pages/menu-cuatro/menu-cuatro.module').then( m => m.MenuCuatroPageModule)
+  },
+
 
 
 ];

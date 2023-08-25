@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationController, IonCard } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
+import { Menu } from 'src/app/models/menu';
+
 
 @Component({
   selector: 'app-menu',
@@ -16,11 +18,39 @@ export class MenuPage implements OnInit {
 
   private animation!: Animation;
 
+
+  menuArray:Menu[]=[];
+
   constructor(private router:Router, private animationCtrl: AnimationController) { }
 
   ngOnInit() {
+    this.cargarMenu();
+    //console.log("MENU", this.menuArray);
+    console.table(this.menuArray);
+    console.error("Mi primer erorr en TS");
+    console.warn("Mi primera advertencia en TS");
+    
   }
 
+  cargarMenu(){
+    this.menuArray.push(
+      {
+        id:1,
+        icono:"game-controller-outline",
+        nombre:"Menú uno",
+        url:"/123/menu-uno"
+      },
+      {
+        id:2,
+        icono:"heart-half-outline",
+        nombre:"Menú dos",
+        url:"/menu-dos"
+      }
+    )
+  }
+  
+
+  
 
   ngAfterViewInit() {
     this.animation = this.animationCtrl
@@ -54,6 +84,11 @@ export class MenuPage implements OnInit {
   menuTres(){
     var parametroIdAsignatura = "PGY4121";
     this.router.navigateByUrl(parametroIdAsignatura + "/menu-tres");
+  }
+
+  menuCuatro(){
+    var nota = 55;
+    this.router.navigateByUrl("menu-cuatro/" + nota);
   }
 
   logout(){
