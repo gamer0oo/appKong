@@ -22,10 +22,29 @@
     </ion-card> -->
 
 
-    <ion-card *ngFor="let m of menuArray" [routerLink]="m.url">
-      <ion-icon [name]="m.icono "></ion-icon>
-      <h2>{{m.nombre}}</h2>
+    <ion-card *ngFor="let m of menuArray">
+
+      <ng-container *ngIf="m.disabled">
+        <div class="box" [routerLink]="m.url">
+          <ion-icon [name]="m.icono "></ion-icon>
+          <h2>{{m.nombre}}</h2>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!m.disabled">
+        <div class="box-disabled">
+          <ion-icon [name]="m.icono "></ion-icon>
+          <h2>{{m.nombre}}</h2>
+        </div>
+      </ng-container>
+      
     </ion-card>
+
+
+    <div class="box-skeleton" *ngFor="let m of menuArray">
+      <ion-skeleton-text [animated]="true" class="skeleton"></ion-skeleton-text>
+    </div>
+
 
     <ion-button (click)="play()">Play</ion-button>
     <ion-button (click)="pause()">Pause</ion-button>

@@ -3,4 +3,5 @@ export interface Menu{
     nombre:string;
     url:string;
     icono:string;
+    disabled?:boolean;
 }

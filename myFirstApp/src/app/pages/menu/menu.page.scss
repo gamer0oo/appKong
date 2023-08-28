@@ -1,0 +1,33 @@
+.box ion-icon{
+    font-size: 50px;
+}
+
+.box-disabled ion-icon{
+    font-size: 50px;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    color: green;
+}
+.box-disabled{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    color: red;
+}
+
+
+
+.skeleton{
+    width: 90%;
+    height: 70px;
+}
+
+.box-skeleton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

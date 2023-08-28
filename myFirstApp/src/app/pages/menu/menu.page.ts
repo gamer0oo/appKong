@@ -38,7 +38,8 @@ export class MenuPage implements OnInit {
         id:1,
         icono:"game-controller-outline",
         nombre:"Menú uno",
-        url:"/123/menu-uno"
+        url:"/123/menu-uno",
+        disabled:true
       },
       {
         id:2,
