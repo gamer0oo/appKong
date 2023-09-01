@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { Menu } from '../models/menuType';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { AnimationController } from '@ionic/angular'
+import { Animation, AnimationController } from '@ionic/angular'
 
 @Component({
   selector: 'app-home',
@@ -21,9 +21,23 @@ export class HomePage {
       const usuario = params.get('usuario');
       this.username = usuario ? usuario : '';
     });
-
     this.loadMenu();
   }
+
+  ngAfterViewInit() {
+    const refs = document.querySelectorAll("ion-card");
+
+    if (refs) {
+      const animation: Animation = this.animationControl.create()
+      .addElement(refs)
+      .duration(1000)
+      .iterations(1)
+      .fromTo('opacity', '0', '1')
+      .fromTo('transform', 'translateX(-100%)', 'translateX(0)');
+      animation.play();
+    }
+  }
+
 
   loadMenu(){
     this.menuArr.push(

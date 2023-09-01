@@ -18,14 +18,14 @@
     <div id="menu-container">
       <ion-card *ngFor="let i of menuArr">
         <ng-container *ngIf="i.disabled">
-          <div class="box-disabled" [routerLink]="i.url">
+          <div class="box-disabled card" [routerLink]="i.url">
             <ion-icon [name]="i.icono" />
             <h2>{{i.nombre}}</h2>
           </div>
         </ng-container>
 
         <ng-container *ngIf="!i.disabled">
-          <div class="box" [routerLink]="i.url">
+          <div class="box card" [routerLink]="i.url">
             <ion-icon [name]="i.icono" />
             <h2>{{i.nombre}}</h2>
           </div>
