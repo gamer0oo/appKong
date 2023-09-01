@@ -1,8 +1,22 @@
-ion-card {
+
+ion-toolbar {
+    --ion-toolbar-background: #333;
+    --ion-text-color: #e1e1e1;
+    --ion-toolbar-background: url("https://comozooconservatory.org/wp-content/uploads/2019/04/Gorilla-Hero.jpg");
+    background-size: cover;
+}
+
+ion-content{
+
+    --ion-background-color:  radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+    --ion-card-background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+    --ion-text-color: #fff;
+
+    ion-card {
     height: fit-content;
     padding: 2vh 0 10vh 0;
     margin-top: 20%;
-
+    
     ion-card-title{
         text-align: center;
         }
@@ -19,10 +33,10 @@ ion-card {
     
     ion-button{
         display: flex;
-        margin-top: 4vh;
-        
         ion-icon {
             margin: 0 2vw;
         }
     }
+}
+
 }
