@@ -1,7 +1,8 @@
+
 import { Component } from '@angular/core';
 import { Menu } from '../models/menuType';
-import { Router } from '@angular/router';
-import { AnimationController } from '@ionic/angular';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Animation, AnimationController } from '@ionic/angular'
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,34 @@ import { AnimationController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  username : string = '';
 
   menuArr:Menu = []
 
-  constructor(private router:Router, private animationControl: AnimationController) {}
+  constructor(private route: ActivatedRoute, private router:Router, private animationControl: AnimationController) {}
 
-  ngOnInit(){
+  ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const usuario = params.get('usuario');
+      this.username = usuario ? usuario : '';
+    });
     this.loadMenu();
   }
+
+  ngAfterViewInit() {
+    const refs = document.querySelectorAll("ion-card");
+
+    if (refs) {
+      const animation: Animation = this.animationControl.create()
+      .addElement(refs)
+      .duration(1000)
+      .iterations(1)
+      .fromTo('opacity', '0', '1')
+      .fromTo('transform', 'translateX(-100%)', 'translateX(0)');
+      animation.play();
+    }
+  }
+
 
   loadMenu(){
     this.menuArr.push(
@@ -37,4 +58,7 @@ export class HomePage {
     )
   }
 
+  logout(){
+    this.router.navigateByUrl("login");
+  }
 }

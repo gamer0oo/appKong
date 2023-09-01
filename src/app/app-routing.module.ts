@@ -16,13 +16,21 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: 'menu1',
     loadChildren: () => import('./pages/menu1/menu1.module').then( m => m.Menu1PageModule)
   },
   {
     path: 'menu2',
     loadChildren: () => import('./pages/menu2/menu2.module').then( m => m.Menu2PageModule)
+  },  {
+    path: 'recover-password',
+    loadChildren: () => import('./pages/recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
   },
+
 ];
 
 @NgModule({

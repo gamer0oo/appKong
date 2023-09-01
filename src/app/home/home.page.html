@@ -1,20 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-button (click)="logout()" slot="start" color="light">
+      <ion-icon name="log-out-outline" />
+    </ion-button>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">HOME</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="home-container">
+    <div id="hello-user"> 
+      <span>¡</span>
+      <strong>Bienvenido,</strong>
+      <span>{{username}}</span>
+      <span>!</span>
+    </div>
+    <div id="menu-container">
+      <ion-card *ngFor="let i of menuArr">
+        <ng-container *ngIf="i.disabled">
+          <div class="box-disabled card" [routerLink]="i.url">
+            <ion-icon [name]="i.icono" />
+            <h2>{{i.nombre}}</h2>
+          </div>
+        </ng-container>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ng-container *ngIf="!i.disabled">
+          <div class="box card" [routerLink]="i.url">
+            <ion-icon [name]="i.icono" />
+            <h2>{{i.nombre}}</h2>
+          </div>
+        </ng-container>
+      </ion-card>
+    </div>
   </div>
+  
 </ion-content>
