@@ -1,7 +1,9 @@
-## _IONIC - ANGULAR MOBILE APP._
+## _IONIC - ANGULAR MOBILE APP_
 
 
-```run: ionic start
+
+```
+  run: ionic start
 ```
 
 ```
