@@ -1,0 +1,7 @@
+{
+  "name": "appKong",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
