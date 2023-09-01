@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>INICIAR SESION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Inicio de Sesión</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  <div class="container">  <ion-card-content>
+    <ion-input [(ngModel)]="usuario" labelPlacement="stacked">
+      <div slot="label">Nombre de Usuario</div>
+    </ion-input>
+    <ion-input [(ngModel)]="contrasena" type="password" labelPlacement="stacked">
+      <div slot="label">Contraseña</div>
+    </ion-input>
+    <ion-button color="dark" shape="round" (click)="handleLogin()">
+      Iniciar Sesión 
+      <ion-icon name="arrow-forward-outline" /> 
+    </ion-button>
+  </ion-card-content></div>
+
+  </ion-card>
+</ion-content>
