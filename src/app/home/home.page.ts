@@ -9,4 +9,11 @@ export class HomePage {
 
   constructor() {}
 
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const usuario = params.get('usuario');
+      this.nombreUsuario = usuario;
+    });
+    
+  }
 }
