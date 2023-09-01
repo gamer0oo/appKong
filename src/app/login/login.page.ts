@@ -26,8 +26,8 @@ export class LoginPage implements OnInit {
       this.helper.showAlert("Ingrese contraseña", "Error");
       return;
     }
-    if (this.usuario == "PGY4121001d" && this.contrasena == "123" ) {
-      return this.router.navigateByUrl('home');
+    if (this.usuario == "1234" && this.contrasena == "123" ) {
+      return this.router.navigateByUrl('home/' + this.usuario);
     }
       return this.helper.showAlert("Usuario o contraseña incorrectos", "Error");
   }
