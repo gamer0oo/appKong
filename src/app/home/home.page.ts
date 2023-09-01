@@ -43,4 +43,8 @@ export class HomePage {
       }
     )
   }
+
+  logout(){
+    this.router.navigateByUrl("login");
+  }
 }

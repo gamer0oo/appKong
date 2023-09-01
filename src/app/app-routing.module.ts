@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'menu2',
     loadChildren: () => import('./pages/menu2/menu2.module').then( m => m.Menu2PageModule)
+  },  {
+    path: 'recover-password',
+    loadChildren: () => import('./pages/recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
   },
+
 ];
 
 @NgModule({

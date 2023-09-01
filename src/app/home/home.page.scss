@@ -9,7 +9,10 @@ ion-toolbar {
     padding-top: 2vh;
     font-size: 1.2em;
   }
-  background-size: cover;
+  
+  ion-icon {
+    transform: rotateY(180deg);
+  }
 }
 
 #home-container {
