@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AnimationController, IonCard } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
 import { Menu } from 'src/app/models/menu';
+import { HelperService } from 'src/app/services/helper.service';
 
 
 @Component({
@@ -21,7 +22,13 @@ export class MenuPage implements OnInit {
 
   menuArray:Menu[]=[];
 
-  constructor(private router:Router, private animationCtrl: AnimationController) { }
+  loading:boolean= true;
+
+  constructor(
+            private router:Router, 
+            private animationCtrl: AnimationController,
+            private helper:HelperService
+    ) { }
 
   ngOnInit() {
     this.cargarMenu();
@@ -29,8 +36,10 @@ export class MenuPage implements OnInit {
     console.table(this.menuArray);
     console.error("Mi primer erorr en TS");
     console.warn("Mi primera advertencia en TS");
-    
+    setTimeout(()=> {this.loading = false},3000)
   }
+  
+
 
   cargarMenu(){
     this.menuArray.push(
@@ -92,8 +101,12 @@ export class MenuPage implements OnInit {
     this.router.navigateByUrl("menu-cuatro/" + nota);
   }
 
-  logout(){
-    this.router.navigateByUrl("login");
+  async logout(){
+    
+    var confirm = await this.helper.showConfirm("Desea cerrar la sesión actual?","Confirmar","Cancelar");
+    if(confirm == true ) {
+      this.router.navigateByUrl("login");
+    }
   }
 
 
